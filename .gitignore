@@ -1,6 +1,6 @@
 config.py
-models/*
-!models/.gitignore
+hugging-face-cache/*
+!hugging-face-cache/.gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
