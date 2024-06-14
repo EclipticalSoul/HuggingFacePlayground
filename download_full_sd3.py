@@ -1,5 +1,7 @@
 from huggingface_hub import hf_hub_download, login
 import config
+# This file won't download redundant info as long as .huggingface in models is kept around
+# Okay, SD3 is waaaay more intensive than 2, gonna need a retool before I can use this
 
 login(token=config.loginToken)
 # Comments as I understand them lol
@@ -14,3 +16,9 @@ hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="sd3_m
 
 # Full model most resource intensive
 hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="sd3_medium_incl_clips_t5xxlfp16.safetensors", local_dir="models")
+
+# Text encoders needed 
+hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="text_encoders/clip_g.safetensors", local_dir="models/text-encoders")
+hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="text_encoders/clip_l.safetensors", local_dir="models/text-encoders")
+hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="text_encoders/t5xxl_fp16.safetensors", local_dir="models/text-encoders")
+hf_hub_download(repo_id="stabilityai/stable-diffusion-3-medium", filename="text_encoders/t5xxl_fp8_e4m3fn.safetensors", local_dir="models/text-encoders")
